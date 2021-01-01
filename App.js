@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, memo, useMemo } from "react";
-import { StyleSheet, View, Text, Image, LogBox } from "react-native";
+import { StyleSheet, View, Text, Image, LogBox, StatusBar } from "react-native";
 import LottieView from "lottie-react-native";
 import moment from "moment";
 import { sanFranciscoWeights, human } from "react-native-typography";
@@ -64,6 +64,7 @@ function CountDownScreen({ setFinish = () => {} }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
       <View style={styles.content}>
         <Text style={human.largeTitleObject}>Countdown 2021</Text>
         <CountDown
@@ -80,7 +81,7 @@ function CountDownScreen({ setFinish = () => {} }) {
 function Signature({ colorText = "black" }) {
   return (
     <View style={styles.bottom}>
-      <View style={{ flexDirection: "row", alignItems: 'center' }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Text style={[human.callout, { color: colorText }]}>
           {"Coryright by "}
         </Text>
